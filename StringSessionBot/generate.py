@@ -32,7 +32,7 @@ from telethon.errors import (
 )
 
 
-ask_ques = "Pʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴛʜᴇ ᴘʏᴛʜᴏɴ ʟɪʙʀᴀʀʏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ғᴏʀ"
+ask_ques = "Selecione Telethon"
 buttons_ques = [
     [
         InlineKeyboardButton("Pʏʀᴏɢʀᴀᴍ", callback_data="pyrogram1"),
@@ -62,9 +62,9 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             ty += " v2"
     if is_bot:
         ty += " Bot"
-    await msg.reply(f"Sᴛᴀʀᴛɪɴɢ {ty} Sᴇssɪᴏɴ Gᴇɴᴇʀᴀᴛɪᴏɴ...")
+    await msg.reply(f"Iniciando Gerador de Session...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, 'Pʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ `API_ID`', filters=filters.text)
+    api_id_msg = await bot.ask(user_id, 'Envie `API_ID`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     try:
@@ -72,12 +72,12 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except ValueError:
         await api_id_msg.reply('Nᴏᴛ ᴀ ᴠᴀʟɪᴅ API_ID (ᴡʜɪᴄʜ ᴍᴜsᴛ ʙᴇ ᴀɴ ɪɴᴛᴇɢᴇʀ). Pʟᴇᴀsᴇ sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ ᴀɢᴀɪɴ.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
-    api_hash_msg = await bot.ask(user_id, 'Pʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ `API_HASH`', filters=filters.text)
+    api_hash_msg = await bot.ask(user_id, 'Envie `API_HASH`', filters=filters.text)
     if await cancelled(api_hash_msg):
         return
     api_hash = api_hash_msg.text
     if not is_bot:
-        t = "Nᴏᴡ ᴘʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ `PHONE_NUMBER` ᴀʟᴏɴɢ ᴡɪᴛʜ ᴛʜᴇ ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ. \nExᴀᴍᴘʟᴇ : `+19876543210`'"
+        t = "Envie seu número de telefone. \nExemplo : `+5512996565255`'"
     else:
         t = "Nᴏᴡ ᴘʟᴇᴀsᴇ sᴇɴᴅ ʏᴏᴜʀ `BOT_TOKEN` \nExᴀᴍᴘʟᴇ : `12345:ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘϙʀsᴛᴜᴠᴡxʏᴢ`'"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
@@ -85,7 +85,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         return
     phone_number = phone_number_msg.text
     if not is_bot:
-        await msg.reply("sᴇɴᴅɪɴɢ ᴏᴛᴘ...")
+        await msg.reply("Enviando código...")
     else:
         await msg.reply("Lᴏɢɢɪɴɢ ᴀs Bᴏᴛ Usᴇʀ...")
     if telethon and is_bot:
@@ -160,7 +160,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**ᴛʜɪs ɪs ʏᴏᴜʀ {ty.upper()} sᴛʀɪɴɢ sᴇssɪᴏɴ ** \n\n`{string_session}` \n\nɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ: @string_puiibot"
+    text = f"**ᴛʜɪs ɪs ʏᴏᴜʀ {ty.upper()} sᴛʀɪɴɢ sᴇssɪᴏɴ ** \n\n`{string_session}` \n\nɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ: @ondangra"
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -169,7 +169,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "Sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ {} sᴛʀɪɴɢ sᴇssɪᴏɴ. \n\nPʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs! \n\nBʏ @anu_pi".format("telethon" if telethon else "pyrogram"))
+    await bot.send_message(msg.chat.id, "Session gerada com sucesso. \n\nVerifique as mensagens salvas! \n\nBʏ @anu_pi".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
