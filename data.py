@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [InlineKeyboardButton("❣️ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ❣️", callback_data="generate")]
+    generate_single_button = [InlineKeyboardButton("❣️ Gerar Session ❣️", callback_data="generate")]
 
     home_buttons = [
         generate_single_button,
@@ -13,10 +13,10 @@ class Data:
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨ ᴅᴇᴠᴇʟᴏᴘᴇʀ  ✨", url="https://t.me/anu_pi")],
+        [InlineKeyboardButton("✨ Desenvolvedor  ✨", url="https://t.me/ondanegra")],
         [
-            InlineKeyboardButton(" ❔ ʜᴇʟᴘ ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 ᴀʙᴏᴜᴛ 🎪", callback_data="about")
+            InlineKeyboardButton(" ❔ Ajuda ❔", callback_data="help"),
+            InlineKeyboardButton("🎪 Sobre 🎪", callback_data="about")
         ],
         
     ]
@@ -26,10 +26,9 @@ Hᴏɪ {}
 
 Tʜɪs ɪs {}
 
-A sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇɴ ɪɴ ᴩʏᴛʜᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴩʏʀᴏɢʀᴀᴍ.
-ғᴏʀ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴛʜᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴs
+Gerador Sessions Telegram Para Telethon
 
-ᴏᴡᴏ ʙʏ : [Λnanya](https://t.me/anu_pi)
+por : [Onda](https://t.me/ondanegra)
     """
 
     HELP = """
@@ -46,8 +45,8 @@ A sᴛʀɪɴɢ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ, ᴡʀɪᴛᴛᴇ�
     ABOUT = """
 **Aʙᴏᴜᴛ Tʜɪs Bᴏᴛ** 
   
-  Tᴇʟᴇɢʀᴀᴍ Bᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ Pʏʀᴏɢʀᴀᴍ ᴀɴᴅ Tᴇʟᴇᴛʜᴏɴ sᴛʀɪɴɢ
-  
+  T
+  Bot Telegram Gerador progama e telethon string
   
   Fʀᴀᴍᴇᴡᴏʀᴋ : [Pʏʀᴏɢʀᴀᴍ](https://docs.pyrogram.org)
   
